@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.items
+name: "items"
+title: "Monday Items"
+description: "Full lifecycle for items on a Monday board."
+body: "Full lifecycle for items on a Monday board: create, update, archive, delete, move, duplicate, and read. The polling trigger fires on new or updated items."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

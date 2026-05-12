@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.workspaces
+name: "workspaces"
+title: "Monday Workspaces"
+description: "Top-level containers for Monday boards and folders."
+body: "Create, list, and delete the top-level workspaces that hold Monday boards and folders. Useful when bootstrapping a new tenant or tearing one down at the end of an environment lifecycle."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

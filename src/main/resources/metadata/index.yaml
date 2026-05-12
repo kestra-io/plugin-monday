@@ -1,8 +1,8 @@
-group: io.kestra.plugin.template
-name: "template"
-title: "Template"
-description: "Plugin template for Kestra"
-body: ""
+group: io.kestra.plugin.monday
+name: "monday"
+title: "Monday"
+description: "Drive Monday from a Kestra flow via its GraphQL API."
+body: "Plugin for Monday's GraphQL API, covering boards, groups, columns, items, subitems, comments, users, workspaces, webhooks, folders, teams, and notifications. Includes a generic query task as an escape hatch and a polling trigger that reacts to new or updated items."
 videos: []
 createdBy: "Kestra Core Team"
 managedBy: "Kestra Core Team"

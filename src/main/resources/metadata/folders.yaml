@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.folders
+name: "folders"
+title: "Monday Folders"
+description: "Organise Monday workspace layout."
+body: "Create and delete folders inside Monday workspaces. Useful when scripting workspace layout or grouping boards under a common parent."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

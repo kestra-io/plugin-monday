@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.updates
+name: "updates"
+title: "Monday Updates"
+description: "Comment threads attached to Monday items."
+body: "Post, delete, and like the comment threads (updates) attached to a Monday item. Useful for narrating flow activity directly on the item that triggered it."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

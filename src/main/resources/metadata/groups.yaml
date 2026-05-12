@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.groups
+name: "groups"
+title: "Monday Groups"
+description: "Manage the labelled sections inside a Monday board."
+body: "Create, update, delete, archive, and duplicate the labelled sections (groups) inside a Monday board. Use them when scripting board layout or organising items into logical buckets."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

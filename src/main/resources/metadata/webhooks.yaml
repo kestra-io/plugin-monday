@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.webhooks
+name: "webhooks"
+title: "Monday Webhooks"
+description: "Push Monday board events to an external endpoint."
+body: "Register and remove webhooks on a Monday board so external endpoints get pushed events. Use them to wire Monday board activity into a Kestra webhook trigger or another HTTP listener."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

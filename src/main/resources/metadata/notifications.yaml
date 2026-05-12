@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.notifications
+name: "notifications"
+title: "Monday Notifications"
+description: "Send in-app Monday notifications."
+body: "Send an in-app Monday notification to a user, tied to a target board, item, or project. Useful for alerting an owner from a flow without leaving the Monday inbox."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

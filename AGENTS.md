@@ -1,47 +1,62 @@
-# Kestra Template Plugin
+# Kestra Plugin for Monday
 
 ## What
 
-- Provides plugin components under `io.kestra.plugin.templates`.
-- Includes classes such as `Example`, `Trigger`.
+- Provides plugin components under `io.kestra.plugin.monday`.
+- Task subpackages: `items`, `subitems`, `boards`, `groups`, `columns`, `updates`, `users`, `workspaces`, `folders`, `teams`, `webhooks`, `notifications`, `query`.
+- One trigger: `items.Trigger` (polling).
 
 ## Why
 
-- What user problem does this solve? Teams need a concrete starting point for building and validating new Kestra plugins without recreating the same project scaffolding from scratch.
-- Why would a team adopt this plugin in a workflow? It gives plugin authors a ready-made reference repo they can adapt alongside their own build, test, and publishing workflow.
-- What operational/business outcome does it enable? It shortens plugin delivery time, reduces setup mistakes, and makes internal or partner plugin development more repeatable.
+- Lets Kestra flows automate Monday workflows: provision boards, groups, columns, workspaces, folders, teams, and webhooks; create or update items and subitems; post comments and notifications; and react to new or updated items via a polling trigger.
 
 ## How
 
 ### Architecture
 
-Single-module plugin. Source packages under `io.kestra.plugin`:
+Single-module plugin built on a thin GraphQL-only client.
 
-- `templates`
-
-Infrastructure dependencies (Docker Compose services):
-
-- `app`
-
-### Key Plugin Classes
-
-- `io.kestra.plugin.templates.Example`
+- `AbstractMondayConnection` holds the shared `apiToken`, `apiUrl`, and `apiVersion` properties plus a `protected static final ObjectMapper MAPPER` reused by every subclass.
+- `AbstractMondayCall<O>` is the base for one-shot GraphQL calls (queries or mutations). Subclasses implement `buildQuery`, `buildVariables`, and `mapOutput`. The base guards against a null `data` node before calling `mapOutput`.
+- `AbstractMondayFetch<T, O>` is the base for paginated reads. It owns the `fetchType` property and routes `FETCH_ONE`, `FETCH`, `STORE`, and `NONE` through `buildOutput`. `STORE` writes Ion via `FileSerde.writeAll`.
+- `MondayClient` wraps Kestra's HTTP client (JDK `HttpClient` under the hood). It retries on HTTP 429 and on `COMPLEXITY_BUDGET_EXHAUSTED` errors (up to 3 attempts) using either the API-provided `retry_in_seconds` or an exponential backoff capped at 30 seconds.
+- Column values are passed as a `Property<Map<String, Object>>` and serialized to a JSON string before being sent, matching Monday's JSON-in-JSON contract.
+- Subitems use the dedicated `create_subitem` mutation; arguments mirror `create_item` minus board and group ids.
 
 ### Project Structure
 
 ```
-plugin-template/
-├── src/main/java/io/kestra/plugin/templates/
-├── src/test/java/io/kestra/plugin/templates/
-├── build.gradle
-└── README.md
+plugin-monday/
+├── src/main/java/io/kestra/plugin/monday/
+│   ├── AbstractMondayConnection.java
+│   ├── AbstractMondayCall.java
+│   ├── AbstractMondayFetch.java
+│   ├── MondayClient.java
+│   ├── MondayApiException.java
+│   ├── boards/         # Create, Get, Query, Update, Delete, Archive, Duplicate
+│   ├── columns/        # Create, Update, Delete
+│   ├── folders/        # Create, Delete
+│   ├── groups/         # Create, Update, Delete, Archive, Duplicate
+│   ├── items/          # Create, Update, Delete, Archive, Get, Query, Move, Duplicate, Trigger
+│   ├── notifications/  # Create
+│   ├── query/          # Query (generic GraphQL escape hatch)
+│   ├── subitems/       # Create
+│   ├── teams/          # Create
+│   ├── updates/        # Create, Delete, Like
+│   ├── users/          # GetMe, Query
+│   ├── webhooks/       # Create, Delete
+│   └── workspaces/     # Create, Query, Delete
+└── src/test/java/io/kestra/plugin/monday/
+    ├── MondayClientTest.java
+    ├── MondayWireMockTest.java
+    └── <subpackage>/*TaskTest.java  # WireMock-backed unit tests
 ```
 
-## Local rules
+### Testing
 
-- Base the wording on the implemented packages and classes, not on template README text.
+WireMock-backed unit tests, one per subpackage, run on every build. No live API tests.
 
 ## References
 
-- https://kestra.io/docs/plugin-developer-guide
-- https://kestra.io/docs/plugin-developer-guide/contribution-guidelines
+- Monday developer center: https://developer.monday.com/api-reference/
+- Kestra plugin developer guide: https://kestra.io/docs/plugin-developer-guide
