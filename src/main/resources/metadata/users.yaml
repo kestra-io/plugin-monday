@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.users
+name: "users"
+title: "Monday Users"
+description: "Look up Monday users."
+body: "List Monday users in the account and resolve the identity tied to the API token in use. Useful for looking up user ids before assigning items or sending notifications."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

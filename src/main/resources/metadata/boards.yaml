@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.boards
+name: "boards"
+title: "Monday Boards"
+description: "Manage Monday boards from a flow."
+body: "Create, get, query, update, delete, archive, and duplicate Monday boards. Useful for provisioning new boards or tearing down boards as part of an automated workflow."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

@@ -1,0 +1,30 @@
+package io.kestra.plugin.monday.webhooks;
+
+public enum WebhookEvent {
+    INCOMING_NOTIFICATION,
+    CHANGE_COLUMN_VALUE,
+    CHANGE_STATUS_COLUMN_VALUE,
+    CREATE_ITEM,
+    ITEM_ARCHIVED,
+    ITEM_DELETED,
+    ITEM_MOVED_TO_ANY_GROUP,
+    ITEM_MOVED_TO_SPECIFIC_GROUP,
+    ITEM_RESTORED,
+    CREATE_SUBITEM,
+    CHANGE_SUBITEM_COLUMN_VALUE,
+    CHANGE_NAME,
+    UPDATE_COLUMN_VALUE,
+    CHANGE_SUBITEM_NAME,
+    MOVE_SUBITEM,
+    SUBITEM_ARCHIVED,
+    SUBITEM_DELETED,
+    CREATE_COLUMN,
+    CREATE_UPDATE,
+    EDIT_UPDATE,
+    DELETE_UPDATE,
+    CREATE_SUBITEM_UPDATE;
+
+    public String value() {
+        return name().toLowerCase();
+    }
+}

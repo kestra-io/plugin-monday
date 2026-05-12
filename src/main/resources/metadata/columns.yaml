@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.columns
+name: "columns"
+title: "Monday Columns"
+description: "Define a Monday board's schema."
+body: "Create, rename, and delete the columns that make up a Monday board's schema. Use them when defining or evolving a board's structure programmatically."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

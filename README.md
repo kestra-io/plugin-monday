@@ -35,18 +35,18 @@
 </p>
 <p align="center" style="color:grey;"><i>Get started with Kestra in 3 minutes.</i></p>
 
-# Kestra Plugin Template
+# Kestra Plugin for Monday
 
 ## Why
 
-- What user problem does this solve? Teams need a concrete starting point for building and validating new Kestra plugins without recreating the same project scaffolding from scratch.
-- Why would a team adopt this plugin in a workflow? It gives plugin authors a ready-made reference repo they can adapt alongside their own build, test, and publishing workflow.
-- What operational/business outcome does it enable? It shortens plugin delivery time, reduces setup mistakes, and makes internal or partner plugin development more repeatable.
+- Automates work on Monday boards from inside Kestra flows: provisioning boards and columns, creating or updating items and subitems, posting comments, sending notifications, and reacting to new or updated items via a polling trigger.
+- Keeps Monday in sync with other systems orchestrated by Kestra without bespoke scripts or external integrations.
 
 ## What
 
-- Provides plugin components under `io.kestra.plugin.templates`.
-- Includes classes such as `Example`, `Trigger`.
+- Provides plugin components under `io.kestra.plugin.monday`.
+- Task subpackages: `items`, `subitems`, `boards`, `groups`, `columns`, `updates`, `users`, `workspaces`, `folders`, `teams`, `webhooks`, `notifications`, and a generic `query` escape hatch.
+- One polling trigger: `items.Trigger`, which fires when items on a board are created or updated.
 
 ## Documentation
 * Full documentation can be found under: [kestra.io/docs](https://kestra.io/docs)

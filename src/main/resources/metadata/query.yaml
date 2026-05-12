@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.query
+name: "query"
+title: "Monday Query"
+description: "Generic Monday GraphQL access."
+body: "Run an arbitrary Monday GraphQL query or mutation. Use this as an escape hatch when no dedicated task covers the operation."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

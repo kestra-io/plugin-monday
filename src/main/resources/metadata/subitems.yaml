@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.subitems
+name: "subitems"
+title: "Monday Subitems"
+description: "Work with subitems nested under parent items."
+body: "Create a subitem nested under a parent Monday item, with optional column values. Use it when breaking a top-level item down into checklist-style children from a flow."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"

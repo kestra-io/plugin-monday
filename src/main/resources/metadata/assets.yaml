@@ -1,0 +1,8 @@
+group: io.kestra.plugin.monday.assets
+name: "assets"
+title: "Monday Assets"
+description: "Fetch Monday asset metadata and content."
+body: "Fetch and download Monday asset (file) metadata and content. Use it to inspect uploads attached to items or to stream binaries into Kestra internal storage for downstream processing."
+videos: []
+createdBy: "Kestra Core Team"
+managedBy: "Kestra Core Team"
