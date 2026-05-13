@@ -45,7 +45,7 @@ public abstract class AbstractMondayConnection extends Task {
 
     @Schema(
         title = "Monday API version header",
-        description = "Sent as the `API-Version` header. See https://developer.monday.com/api-reference/docs/api-versioning."
+        description = "Sent as the `API-Version` header. See the [Monday API versioning docs](https://developer.monday.com/api-reference/docs/api-versioning)."
     )
     @PluginProperty(group = "connection")
     @Builder.Default
