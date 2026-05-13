@@ -23,7 +23,13 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Duplicate a Monday board")
+@Schema(
+    title = "Duplicate a Monday board",
+    description = """
+        Three modes are available: `WITH_STRUCTURE` copies board layout only;
+        `WITH_PULSES` copies items but not their comment threads;
+        `WITH_PULSES_AND_UPDATES` copies items and their comment threads."""
+)
 @Plugin(
     examples = {
         @Example(

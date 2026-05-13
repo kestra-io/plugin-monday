@@ -1,8 +1,8 @@
 group: io.kestra.plugin.monday.teams
 name: "teams"
 title: "Monday Teams"
-description: "Provision Monday teams."
-body: "Create a Monday team and assign an initial set of users to it. Useful when provisioning accounts in bulk or mirroring an external directory."
+description: "Provision and manage Monday teams."
+body: "Create and delete Monday teams, and add or remove their members. Useful when provisioning accounts in bulk or mirroring an external directory."
 videos: []
 createdBy: "Kestra Core Team"
 managedBy: "Kestra Core Team"

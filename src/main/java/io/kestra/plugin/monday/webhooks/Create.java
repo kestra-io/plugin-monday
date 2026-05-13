@@ -67,7 +67,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<WebhookEvent> event;
 
-    @Schema(title = "Extra event configuration", description = "Serialized to a JSON string for events that require it (e.g. `change_status_column_value`).")
+    @Schema(title = "Extra event configuration", description = "Serialized to a JSON string for events that require it. For example, `change_status_column_value` uses: `{\"columnId\": \"status\", \"columnValue\": {\"index\": 1}}`.")
     @PluginProperty(group = "advanced")
     private Property<Map<String, Object>> config;
 

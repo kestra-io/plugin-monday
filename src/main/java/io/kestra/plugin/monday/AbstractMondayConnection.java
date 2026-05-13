@@ -52,7 +52,8 @@ public abstract class AbstractMondayConnection extends Task {
     protected Property<String> apiVersion = Property.ofValue("2024-10");
 
     @Schema(
-        title = "Maximum number of retry attempts for transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)"
+        title = "Maximum retry attempts",
+        description = "Number of attempts before giving up on transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)."
     )
     @PluginProperty(group = "reliability")
     @Builder.Default

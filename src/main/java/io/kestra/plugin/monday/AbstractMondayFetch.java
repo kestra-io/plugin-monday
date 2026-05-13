@@ -31,7 +31,14 @@ public abstract class AbstractMondayFetch<T, O extends io.kestra.core.models.tas
     extends AbstractMondayConnection
     implements RunnableTask<O> {
 
-    @Schema(title = "Output fetch type")
+    @Schema(
+        title = "Output fetch type",
+        description = """
+            Controls how results are returned: `FETCH_ONE` returns the first row as a map,
+            `FETCH` returns all rows as an in-memory list, `STORE` serialises all rows to
+            Kestra internal storage in Ion format and returns a URI, `NONE` discards results
+            and returns only the count."""
+    )
     @PluginProperty(group = "processing")
     @Builder.Default
     private Property<FetchType> fetchType = Property.ofValue(FetchType.FETCH);

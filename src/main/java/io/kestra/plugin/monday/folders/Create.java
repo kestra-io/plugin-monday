@@ -50,7 +50,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> name;
 
-    @Schema(title = "Folder color")
+    @Schema(title = "Folder color", description = "Monday accepts the uppercase enum name, e.g. `DONE_GREEN`, `BRIGHT_BLUE`, `PURPLE`. See `FolderColor` for all available values.")
     @PluginProperty(group = "main")
     private Property<FolderColor> color;
 

@@ -62,7 +62,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> text;
 
-    @Schema(title = "Target type", description = "One of `Project` (item) or `Post` (update).")
+    @Schema(title = "Target type", description = "One of `Project` (item) or `Post` (update). Note: Monday uses the name `Project` to refer to an item in this API.")
     @PluginProperty(group = "main")
     @Builder.Default
     private Property<NotificationTargetType> targetType = Property.ofValue(NotificationTargetType.PROJECT);
