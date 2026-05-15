@@ -55,11 +55,11 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> groupName;
 
-    @Schema(title = "Position method", description = "One of `before_at`, `after_at`.")
+    @Schema(title = "Position method", description = "One of `before_at`, `after_at`. Must be combined with `relativeTo`.")
     @PluginProperty(group = "advanced")
     private Property<PositionRelativeMethod> positionRelativeMethod;
 
-    @Schema(title = "Existing group id to position relative to")
+    @Schema(title = "Existing group id to position relative to", description = "Requires `positionRelativeMethod` to be set.")
     @PluginProperty(group = "advanced")
     private Property<String> relativeTo;
 

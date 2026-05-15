@@ -47,7 +47,9 @@ import java.util.Optional;
     description = """
         Polls `items_page` for the board, ordered by `__last_updated__` descending, and
         emits an execution when one or more items have an `updated_at` strictly newer
-        than `now - interval` (with a 1-minute overlap buffer to absorb clock drift)."""
+        than `now - interval` (with a 1-minute overlap buffer to absorb clock drift).
+        Fetches up to 100 items per evaluation; if the board is very active, decrease
+        the interval or use `items.Query` with STORE mode for full coverage."""
 )
 @Plugin(
     examples = {
@@ -77,17 +79,28 @@ public class Trigger extends AbstractTrigger implements PollingTriggerInterface,
     private static final ObjectMapper MAPPER = JacksonMapper.ofJson();
     private static final int ITEMS_PAGE_LIMIT = 100;
 
-    @Schema(title = "Monday API token")
+    @Schema(
+        title = "Monday API token",
+        description = """
+            Personal API v2 token. Generate it in Monday under Profile, Developers, My Access Tokens.
+            Treat the token as a secret and prefer Kestra secrets, e.g. `{{ secret('MONDAY_API_TOKEN') }}`."""
+    )
     @PluginProperty(group = "connection", secret = true)
     @NotNull
     private Property<String> apiToken;
 
-    @Schema(title = "Monday GraphQL endpoint")
+    @Schema(
+        title = "Monday GraphQL endpoint",
+        description = "Override only for proxies or test fixtures (WireMock)."
+    )
     @PluginProperty(group = "connection")
     @Builder.Default
     private Property<String> apiUrl = Property.ofValue("https://api.monday.com/v2");
 
-    @Schema(title = "Monday API version header")
+    @Schema(
+        title = "Monday API version header",
+        description = "Sent as the `API-Version` header. See the [Monday API versioning docs](https://developer.monday.com/api-reference/docs/api-versioning)."
+    )
     @PluginProperty(group = "connection")
     @Builder.Default
     private Property<String> apiVersion = Property.ofValue("2024-10");
@@ -105,7 +118,10 @@ public class Trigger extends AbstractTrigger implements PollingTriggerInterface,
     @Builder.Default
     private Duration interval = Duration.ofMinutes(5);
 
-    @Schema(title = "Maximum number of retry attempts for transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)")
+    @Schema(
+        title = "Maximum retry attempts",
+        description = "Number of attempts before giving up on transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)."
+    )
     @PluginProperty(group = "reliability")
     @Builder.Default
     private Property<Integer> maxRetries = Property.ofValue(3);

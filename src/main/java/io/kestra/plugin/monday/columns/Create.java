@@ -24,12 +24,7 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(
-    title = "Create a column on a Monday board",
-    description = """
-        `columnType` accepts standard Monday column types: `text`, `long_text`,
-        `numbers`, `status`, `date`, `people`, `dropdown`, `checkbox`, and others."""
-)
+@Schema(title = "Create a column on a Monday board")
 @Plugin(
     examples = {
         @Example(
@@ -76,7 +71,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @PluginProperty(group = "main")
     private Property<String> columnDescription;
 
-    @Schema(title = "Defaults map", description = "Serialized to a JSON string.")
+    @Schema(title = "Column defaults", description = "Default settings for the new column (e.g. default label index for a status column). Passed as a JSON object to the Monday API.")
     @PluginProperty(group = "advanced")
     private Property<Map<String, Object>> defaults;
 

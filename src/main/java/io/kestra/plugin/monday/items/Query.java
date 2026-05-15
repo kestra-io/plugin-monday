@@ -31,10 +31,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Schema(
     title = "Query items on a Monday board",
-    description = """
-        Uses `items_page` with cursor pagination. Supports three fetch modes:
-        FETCH_ONE returns a single row, FETCH returns the full in-memory list, STORE
-        writes each row as a JSON line to internal storage and returns a URI."""
+    description = "Uses `items_page` with cursor pagination. Use `fetchType` to control how results are returned."
 )
 @Plugin(
     examples = {
@@ -184,7 +181,7 @@ public class Query extends AbstractMondayFetch<Map<String, Object>, Query.Output
         @Schema(title = "First item (FETCH_ONE mode)")
         private final Map<String, Object> row;
 
-        @Schema(title = "Internal storage URI to a JSON-lines file (STORE mode)")
+        @Schema(title = "Internal storage URI (STORE mode)")
         private final URI uri;
 
         @Schema(title = "Number of items fetched")

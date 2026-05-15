@@ -45,14 +45,15 @@ public abstract class AbstractMondayConnection extends Task {
 
     @Schema(
         title = "Monday API version header",
-        description = "Sent as the `API-Version` header. See https://developer.monday.com/api-reference/docs/api-versioning."
+        description = "Sent as the `API-Version` header. See the [Monday API versioning docs](https://developer.monday.com/api-reference/docs/api-versioning)."
     )
     @PluginProperty(group = "connection")
     @Builder.Default
     protected Property<String> apiVersion = Property.ofValue("2024-10");
 
     @Schema(
-        title = "Maximum number of retry attempts for transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)"
+        title = "Maximum retry attempts",
+        description = "Number of attempts before giving up on transient Monday API errors (HTTP 429, COMPLEXITY_BUDGET_EXHAUSTED)."
     )
     @PluginProperty(group = "reliability")
     @Builder.Default
