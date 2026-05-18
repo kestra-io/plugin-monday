@@ -98,7 +98,7 @@ dependencies {
     testImplementation "org.hamcrest:hamcrest-library"
 
     // wiremock for HTTP integration tests (no Testcontainers image for Monday)
-    testImplementation "org.wiremock:wiremock-jetty12:3.9.2"
+    testImplementation "org.wiremock:wiremock-jetty12:3.13.2"
 }
 
 /**********************************************************************************************************************\
