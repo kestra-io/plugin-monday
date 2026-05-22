@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Boards",
+    title = "Monday Boards",
     description = "Manage Monday boards.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )

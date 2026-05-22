@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Folders",
+    title = "Monday Folders",
     description = "Manage Monday folders.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )

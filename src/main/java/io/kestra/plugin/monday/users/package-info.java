@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Users",
+    title = "Monday Users",
     description = "Query users and the authenticated user on Monday.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )

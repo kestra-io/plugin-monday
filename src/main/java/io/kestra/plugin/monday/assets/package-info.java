@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Assets",
+    title = "Monday Assets",
     description = "Fetch and download Monday asset (file) metadata and content.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )

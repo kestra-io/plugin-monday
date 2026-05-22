@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Webhooks",
+    title = "Monday Webhooks",
     description = "Manage Monday webhooks.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )

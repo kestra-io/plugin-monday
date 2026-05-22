@@ -1,5 +1,5 @@
 @PluginSubGroup(
-    title = "Query",
+    title = "Monday Query",
     description = "Run arbitrary GraphQL queries against the Monday API.",
     categories = PluginSubGroup.PluginCategory.BUSINESS
 )
