@@ -25,7 +25,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Fetch a single board with its columns and groups")
+@Schema(
+    title = "Fetch a single board with its columns and groups",
+    description = "Fetch a single board with its columns and groups. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

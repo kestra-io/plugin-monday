@@ -23,7 +23,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Update a single attribute on a Monday board")
+@Schema(
+    title = "Update a single attribute on a Monday board",
+    description = "Update a single attribute on a Monday board. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

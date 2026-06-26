@@ -25,7 +25,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Fetch a single item by id, including its column values")
+@Schema(
+    title = "Fetch a single item by id, including its column values",
+    description = "Fetch a single item by id, including its column values. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

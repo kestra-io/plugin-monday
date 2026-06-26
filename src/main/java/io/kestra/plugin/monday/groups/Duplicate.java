@@ -24,7 +24,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Duplicate a group on a Monday board")
+@Schema(
+    title = "Duplicate a group on a Monday board",
+    description = "Duplicate a group on a Monday board. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

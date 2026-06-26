@@ -23,7 +23,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Delete a comment from a Monday item")
+@Schema(
+    title = "Delete a comment from a Monday item",
+    description = "Delete a comment from a Monday item. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(
