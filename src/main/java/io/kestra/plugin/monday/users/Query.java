@@ -28,7 +28,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Query Monday users")
+@Schema(
+    title = "Query Monday users",
+    description = "Query Monday users. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

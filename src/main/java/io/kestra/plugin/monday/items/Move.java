@@ -23,7 +23,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Move an item to a different group on the same board")
+@Schema(
+    title = "Move an item to a different group on the same board",
+    description = "Move an item to a different group on the same board. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

@@ -24,7 +24,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Create a column on a Monday board")
+@Schema(
+    title = "Create a column on a Monday board",
+    description = "Create a column on a Monday board. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

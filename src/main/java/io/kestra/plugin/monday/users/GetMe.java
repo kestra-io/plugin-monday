@@ -21,7 +21,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Fetch the user behind the API token")
+@Schema(
+    title = "Fetch the user behind the API token",
+    description = "Fetch the user behind the API token. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

@@ -23,7 +23,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Like a comment on a Monday item")
+@Schema(
+    title = "Like a comment on a Monday item",
+    description = "Like a comment on a Monday item. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(

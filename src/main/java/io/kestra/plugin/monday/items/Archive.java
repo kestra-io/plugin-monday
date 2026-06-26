@@ -23,7 +23,10 @@ import java.util.Map;
 @EqualsAndHashCode(callSuper = true)
 @Getter
 @NoArgsConstructor
-@Schema(title = "Archive an item on a Monday board")
+@Schema(
+    title = "Archive an item on a Monday board",
+    description = "Archive an item on a Monday board. Uses the Monday.com GraphQL API."
+)
 @Plugin(
     examples = {
         @Example(
