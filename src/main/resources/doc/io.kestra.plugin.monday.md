@@ -4,7 +4,7 @@ Manage boards, items, groups, columns, and more on Monday.com from Kestra flows.
 
 ## Authentication
 
-Set `apiToken` to your Monday.com API token. Store it in a [secret](https://kestra.io/docs/concepts/secret) and apply it globally with [plugin defaults](https://kestra.io/docs/workflow-components/plugin-defaults).
+Set `apiToken` to your Monday.com API token. Store it in a [secret](https://kestra.io/docs/concepts/secret) and set it on each task.
 
 ## Tasks
 
