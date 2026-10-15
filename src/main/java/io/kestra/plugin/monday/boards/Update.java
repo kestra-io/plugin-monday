@@ -41,7 +41,7 @@ import java.util.Map;
                     type: io.kestra.plugin.monday.boards.Update
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     boardId: "1234567890"
-                    boardAttribute: name
+                    boardAttribute: NAME
                     newValue: "Q2 leads"
                 """
         )
@@ -53,7 +53,7 @@ public class Update extends AbstractMondayCall<Update.Output> {
     @NotNull
     private Property<String> boardId;
 
-    @Schema(title = "Board attribute", description = "One of `name`, `description`, `communication`.")
+    @Schema(title = "Board attribute", description = "One of `NAME`, `DESCRIPTION`, `COMMUNICATION`.")
     @PluginProperty(group = "main")
     @NotNull
     private Property<BoardAttribute> boardAttribute;
