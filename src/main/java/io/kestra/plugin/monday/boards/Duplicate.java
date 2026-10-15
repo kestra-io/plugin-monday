@@ -44,7 +44,7 @@ import java.util.Map;
                     type: io.kestra.plugin.monday.boards.Duplicate
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     boardId: "1234567890"
-                    duplicateType: duplicate_board_with_structure
+                    duplicateType: WITH_STRUCTURE
                 """
         )
     }
@@ -55,7 +55,7 @@ public class Duplicate extends AbstractMondayCall<Duplicate.Output> {
     @NotNull
     private Property<String> boardId;
 
-    @Schema(title = "Duplicate type", description = "One of `duplicate_board_with_structure`, `duplicate_board_with_pulses`, `duplicate_board_with_pulses_and_updates`.")
+    @Schema(title = "Duplicate type", description = "One of `WITH_STRUCTURE`, `WITH_PULSES`, `WITH_PULSES_AND_UPDATES`.")
     @PluginProperty(group = "main")
     @Builder.Default
     private Property<DuplicateBoardType> duplicateType = Property.ofValue(DuplicateBoardType.WITH_STRUCTURE);

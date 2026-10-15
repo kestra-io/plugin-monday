@@ -42,7 +42,7 @@ import java.util.Map;
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     boardId: "1234567890"
                     groupId: "in_progress"
-                    groupAttribute: title
+                    groupAttribute: TITLE
                     newValue: "Doing"
                 """
         )
@@ -61,7 +61,7 @@ public class Update extends AbstractMondayCall<Update.Output> {
 
     @Schema(
         title = "Group attribute",
-        description = "One of `title`, `color`, `position`, `relative_position_after`, `relative_position_before`."
+        description = "One of `TITLE`, `COLOR`, `POSITION`, `RELATIVE_POSITION_AFTER`, `RELATIVE_POSITION_BEFORE`."
     )
     @PluginProperty(group = "main")
     @NotNull

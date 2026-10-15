@@ -44,7 +44,7 @@ import java.util.Map;
                     userId: "12345"
                     targetId: "67890"
                     text: "Item updated by the pipeline."
-                    targetType: Project
+                    targetType: PROJECT
                 """
         )
     }
@@ -55,7 +55,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> userId;
 
-    @Schema(title = "Target id", description = "Item id when `targetType` is `Project`, or update id when `targetType` is `Post`.")
+    @Schema(title = "Target id", description = "Item id when `targetType` is `PROJECT`, or update id when `targetType` is `POST`.")
     @PluginProperty(group = "main")
     @NotNull
     private Property<String> targetId;
@@ -65,7 +65,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> text;
 
-    @Schema(title = "Target type", description = "One of `Project` (item) or `Post` (update). Note: Monday uses the name `Project` to refer to an item in this API.")
+    @Schema(title = "Target type", description = "One of `PROJECT` (item) or `POST` (update). Note: Monday uses the name `Project` to refer to an item in this API.")
     @PluginProperty(group = "main")
     @Builder.Default
     private Property<NotificationTargetType> targetType = Property.ofValue(NotificationTargetType.PROJECT);

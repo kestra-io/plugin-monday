@@ -42,7 +42,7 @@ import java.util.Map;
                     type: io.kestra.plugin.monday.workspaces.Create
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     name: "Marketing"
-                    kind: open
+                    kind: OPEN
                     workspaceDescription: "Campaign tracking."
                 """
         )
@@ -54,7 +54,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> name;
 
-    @Schema(title = "Workspace kind", description = "One of `open`, `closed`.")
+    @Schema(title = "Workspace kind", description = "One of `OPEN`, `CLOSED`.")
     @PluginProperty(group = "main")
     @NotNull
     private Property<WorkspaceKind> kind;

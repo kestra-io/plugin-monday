@@ -43,7 +43,7 @@ import java.util.Map;
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     boardId: "1234567890"
                     url: "https://example.com/webhook"
-                    event: create_item
+                    event: CREATE_ITEM
                 """
         )
     }
@@ -62,9 +62,9 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @Schema(
         title = "Webhook event",
         description = """
-            One of Monday's documented event types, e.g. `create_item`, `change_column_value`,
-            `change_status_column_value`, `item_archived`, `item_deleted`, `item_moved_to_any_group`,
-            `create_subitem`, `create_update`, `edit_update`, `delete_update`."""
+            One of Monday's documented event types, e.g. `CREATE_ITEM`, `CHANGE_COLUMN_VALUE`,
+            `CHANGE_STATUS_COLUMN_VALUE`, `ITEM_ARCHIVED`, `ITEM_DELETED`, `ITEM_MOVED_TO_ANY_GROUP`,
+            `CREATE_SUBITEM`, `CREATE_UPDATE`, `EDIT_UPDATE`, `DELETE_UPDATE`."""
     )
     @PluginProperty(group = "main")
     @NotNull

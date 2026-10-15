@@ -42,7 +42,7 @@ import java.util.Map;
                     type: io.kestra.plugin.monday.boards.Create
                     apiToken: "{{ secret('MONDAY_API_TOKEN') }}"
                     boardName: "Q1 leads"
-                    boardKind: public
+                    boardKind: PUBLIC
                 """
         )
     }
@@ -53,7 +53,7 @@ public class Create extends AbstractMondayCall<Create.Output> {
     @NotNull
     private Property<String> boardName;
 
-    @Schema(title = "Board kind", description = "One of `public`, `private`, `share`.")
+    @Schema(title = "Board kind", description = "One of `PUBLIC`, `PRIVATE`, `SHARE`.")
     @PluginProperty(group = "main")
     @Builder.Default
     private Property<BoardKind> boardKind = Property.ofValue(BoardKind.PUBLIC);
